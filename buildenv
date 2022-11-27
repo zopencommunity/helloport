@@ -1,0 +1,43 @@
+#!/bin/sh
+
+export ZOPEN_TARBALL_URL="https://ftp.gnu.org/gnu/hello/hello-2.12.tar.gz"
+export ZOPEN_TARBALL_DEPS="automake autoconf gettext curl make git gzip zoslib help2man perl"
+export ZOPEN_TYPE="TARBALL"
+
+zopen_check_results()
+{
+  dir="$1"
+  pfx="$2"
+  chk="$1/$2_check.log"
+
+#============================================================================
+#Testsuite summary for GNU Hello 2.12.1-6fe9
+#============================================================================
+# TOTAL: 7
+# PASS:  1
+# SKIP:  2
+# XFAIL: 0
+# FAIL:  4
+# XPASS: 0
+# ERROR: 0
+
+ERROR=$(egrep '^# ERROR:' ${chk} | tail -1 | awk '{ print $3; }')
+SKIP=$(egrep '^# SKIP:' ${chk} | tail -1 | awk '{ print $3; }')
+PASS=$(egrep '^# PASS:' ${chk} | tail -1 | awk '{ print $3; }')
+FAIL=$(egrep '^# FAIL:' ${chk} | tail -1 | awk '{ print $3; }')
+XFAIL=$(egrep '^# XFAIL:' ${chk} | tail -1 | awk '{ print $3; }')
+TOTAL=$(egrep '^# TOTAL:' ${chk} | tail -1 | awk '{ print $3; }')
+
+totalTests=$((${TOTAL}-${SKIP}))
+actualFailures=$((${FAIL}+${XFAIL}+${ERROR}))
+
+  # Echo the following information to gauge build health
+  echo "actualFailures:${actualFailures}"
+  echo "totalTests:${totalTests}"
+  echo "expectedFailures:4"
+}
+
+zopen_append_to_env()
+{
+  # echo envars outside of PATH, MANPATH, LIBPATH
+}
