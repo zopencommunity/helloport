@@ -21,6 +21,7 @@ zopen_check_results()
 # XPASS: 0
 # ERROR: 0
 
+
 ERROR=$(egrep '^# ERROR:' ${chk} | tail -1 | awk '{ print $3; }')
 SKIP=$(egrep '^# SKIP:' ${chk} | tail -1 | awk '{ print $3; }')
 PASS=$(egrep '^# PASS:' ${chk} | tail -1 | awk '{ print $3; }')
