@@ -21,7 +21,6 @@ zopen_check_results()
 # XPASS: 0
 # ERROR: 0
 
-
 ERROR=$(egrep '^# ERROR:' ${chk} | tail -1 | awk '{ print $3; }')
 SKIP=$(egrep '^# SKIP:' ${chk} | tail -1 | awk '{ print $3; }')
 PASS=$(egrep '^# PASS:' ${chk} | tail -1 | awk '{ print $3; }')
@@ -32,7 +31,7 @@ TOTAL=$(egrep '^# TOTAL:' ${chk} | tail -1 | awk '{ print $3; }')
 totalTests=$((${TOTAL}-${SKIP}))
 actualFailures=$((${FAIL}+${XFAIL}+${ERROR}))
 
-  # Echo the following information to gauge build health
+  # Echo the following information to guage build health
   echo "actualFailures:${actualFailures}"
   echo "totalTests:${totalTests}"
   echo "expectedFailures:4"
