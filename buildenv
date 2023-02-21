@@ -4,7 +4,7 @@ export ZOPEN_TARBALL_URL="https://ftp.gnu.org/gnu/hello/hello-2.12.tar.gz"
 export ZOPEN_TARBALL_DEPS="automake autoconf gettext curl make git gzip zoslib help2man perl"
 export ZOPEN_TYPE="GIT"
 export ZOPEN_GIT_URL="https://git.savannah.gnu.org/git/hello.git"
-export ZOPEN_GIT_DEPS="automake autoconf gettext curl libtool make git gzip zoslib help2man perl m4 wget tar coreutils gperf makeinfo"
+export ZOPEN_GIT_DEPS="automake autoconf gettext curl libtool make git gzip zoslib help2man perl m4 wget tar coreutils gperf texinfo"
 
 zopen_check_results()
 {
