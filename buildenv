@@ -42,5 +42,5 @@ actualFailures=$((${FAIL}+${XFAIL}+${ERROR}))
 
 zopen_append_to_env()
 {
-  echo "2.12"
+  ./hello --version | head -1 | cut -f4 -d' ' | sed -e "s/-.*//g"  
 }
