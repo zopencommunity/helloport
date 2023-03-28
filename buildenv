@@ -4,7 +4,8 @@ export ZOPEN_TARBALL_URL="https://ftp.gnu.org/gnu/hello/hello-2.12.tar.gz"
 export ZOPEN_TARBALL_DEPS="automake autoconf gettext curl make git gzip zoslib help2man perl"
 export ZOPEN_TYPE="GIT"
 export ZOPEN_GIT_URL="https://git.savannah.gnu.org/git/hello.git"
-export ZOPEN_GIT_DEPS="automake autoconf gettext curl libtool make git gzip zoslib help2man perl m4 wget tar coreutils gperf texinfo"
+export ZOPEN_GIT_DEPS="perl m4 automake autoconf gettext curl libtool make git gzip zoslib help2man wget tar coreutils gperf texinfo"
+export ZOPEN_COMP=CLANG
 
 zopen_check_results()
 {
@@ -13,13 +14,13 @@ zopen_check_results()
   chk="$1/$2_check.log"
 
 #============================================================================
-#Testsuite summary for GNU Hello 2.12.1-6fe9
+#Testsuite summary for GNU Hello  2.12.1.2-fab5
 #============================================================================
 # TOTAL: 7
-# PASS:  1
+# PASS:  5
 # SKIP:  2
 # XFAIL: 0
-# FAIL:  4
+# FAIL:  0
 # XPASS: 0
 # ERROR: 0
 
@@ -36,10 +37,10 @@ actualFailures=$((${FAIL}+${XFAIL}+${ERROR}))
   # Echo the following information to guage build health
   echo "actualFailures:${actualFailures}"
   echo "totalTests:${totalTests}"
-  echo "expectedFailures:4"
+  echo "expectedFailures:0"
 }
 
 zopen_append_to_env()
 {
-  # echo envars outside of PATH, MANPATH, LIBPATH
+  echo "2.12"
 }
