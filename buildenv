@@ -40,7 +40,7 @@ actualFailures=$((${FAIL}+${XFAIL}+${ERROR}))
   echo "expectedFailures:0"
 }
 
-zopen_append_to_env()
+zopen_get_version()
 {
   ./hello --version | head -1 | cut -f4 -d' ' | sed -e "s/-.*//g"  
 }
