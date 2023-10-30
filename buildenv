@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # bump: hello-version /HELLO_VERSION="(.*)"/ https://ftp.gnu.org/gnu/hello/|re:/href="hello-([\d.]+).tar.gz"/$1/|semver:*
-HELLO_VERSION="2.12"
+HELLO_VERSION="2.12.1"
 
 export ZOPEN_STABLE_URL="https://ftp.gnu.org/gnu/hello/hello-${HELLO_VERSION}.tar.gz"
 export ZOPEN_STABLE_DEPS="automake autoconf gettext curl make git gzip zoslib help2man perl"
