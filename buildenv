@@ -1,13 +1,11 @@
-#!/bin/sh
-
 # bump: hello-version /HELLO_VERSION="(.*)"/ https://ftp.gnu.org/gnu/hello/|re:/href="hello-([\d.]+).tar.gz"/$1/|semver:*
 HELLO_VERSION="2.12.1"
 
+export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_STABLE_URL="https://ftp.gnu.org/gnu/hello/hello-${HELLO_VERSION}.tar.gz"
-export ZOPEN_STABLE_DEPS="automake autoconf gettext curl make git gzip zoslib help2man perl"
-export ZOPEN_BUILD_LINE="DEV"
+export ZOPEN_STABLE_DEPS="automake autoconf gettext curl make git gzip zoslib help2man perl xz coreutils texinfo"
 export ZOPEN_DEV_URL="https://git.savannah.gnu.org/git/hello.git"
-export ZOPEN_DEV_DEPS="perl m4 automake autoconf gettext curl libtool make git gzip zoslib help2man wget tar coreutils gperf texinfo"
+export ZOPEN_DEV_DEPS="perl m4 automake autoconf gettext curl libtool make git gzip zoslib help2man wget tar coreutils gperf texinfo xz"
 export ZOPEN_COMP=CLANG
 
 zopen_check_results()
