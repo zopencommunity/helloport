@@ -2,6 +2,7 @@
 HELLO_VERSION="2.12.1"
 
 export ZOPEN_BUILD_LINE="STABLE"
+export ZOPEN_CATEGORIES="utilities"
 export ZOPEN_STABLE_URL="https://ftp.gnu.org/gnu/hello/hello-${HELLO_VERSION}.tar.gz"
 export ZOPEN_STABLE_DEPS="automake autoconf gettext curl make git gzip zoslib help2man perl xz coreutils texinfo"
 export ZOPEN_DEV_URL="https://git.savannah.gnu.org/git/hello.git"
