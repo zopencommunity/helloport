@@ -1,5 +1,5 @@
 # bump: hello-version /HELLO_VERSION="(.*)"/ https://ftp.gnu.org/gnu/hello/|re:/href="hello-([\d.]+).tar.gz"/$1/|semver:*
-HELLO_VERSION="2.12.1"
+HELLO_VERSION="2.12.3"
 
 export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_CATEGORIES="utilities"
